@@ -1,9 +1,14 @@
-import { LoginAlert } from "../services/login"
+import { Button } from "@chakra-ui/react"
+import { MouseEventHandler} from "react"
 
-export const LoginButton = () => {
+interface CButton{
+    onClick: MouseEventHandler<HTMLButtonElement>
+}
+
+export const LoginButton = ({onClick}: CButton) => {
     return (
-        <button onClick={LoginAlert} style={{ backgroundColor: "green", color: "white", fontSize: "18px", borderRadius: "8px", cursor: "pointer"}}>
-            Fazer Login
-        </button>
+        <Button onClick={onClick} style={{ backgroundColor: "green", color: "white", fontSize: "18px", borderRadius: "8px", cursor: "pointer"}}>
+            {"Fazer Login"}
+        </Button>
     )
 }
